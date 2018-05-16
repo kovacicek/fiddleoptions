@@ -25,11 +25,12 @@ VERSION = "1.0.0"
 REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
 
 setup(
-    name=NAME,
-    version=VERSION,
+    name='FiddleOptions',
+    version='1.0.0',
     description="Fiddle Options Platform",
-    author_email="",
-    url="",
+    author_email=["dovlex@gmail.com","kovacicek@hotmail.com"],
+    url="https://github.com/kovacicek/fiddleoptions",
+    download_url='https://github.com/kovacicek/fiddleoptions/archive/0.1.tar.gz',
     keywords=["Swagger", "Fiddle Options Platform"],
     install_requires=REQUIRES,
     packages=find_packages(),
