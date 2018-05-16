@@ -28,7 +28,7 @@ setup(
     name='FiddleOptions',
     version='1.0.0',
     description="Fiddle Options Platform",
-    author_email=["dovlex@gmail.com","kovacicek@hotmail.com"],
+    author_email="kovacicek@hotmail.com",
     url="https://github.com/kovacicek/fiddleoptions",
     download_url='https://github.com/kovacicek/fiddleoptions/archive/1.0.0.tar.gz',
     keywords=["Swagger", "Fiddle Options Platform"],
