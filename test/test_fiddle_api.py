@@ -16,7 +16,8 @@ from datetime import datetime, date
 
 import unittest
 
-import swagger_client
+from swagger_client.mercury.client.api.fiddle_api import FiddleApi
+from swagger_client.mercury.client.model.fiddle import Fiddle
 from .utils import TestUtils
 
 
@@ -24,7 +25,7 @@ class TestFiddleApi(unittest.TestCase):
     """FiddleApi unit test stubs"""
 
     def setUp(self):
-        self.api = swagger_client.mercury.client.api.fiddle_api.FiddleApi()  # noqa: E501
+        self.api = FiddleApi()
         self.test_utils = TestUtils()
 
     def tearDown(self):
@@ -80,12 +81,19 @@ class TestFiddleApi(unittest.TestCase):
         long_put_butterfly = self.test_utils.\
             create_long_put_butterfly_position(opening_date)
         print(long_put_butterfly)
+        fiddle = Fiddle(user_id='vladimir',
+                        title='Long Butterfly April 9th test Python',
+                        position=long_put_butterfly)
         user_id = 'vladimir'
-        data = {'body': long_put_butterfly}
+        data = {'body': fiddle}
         fiddle = self.api.save_fiddle(user_id, **data)
         print('Saved fiddle %s' % fiddle)
 
         # TODO: add assertion to response
+
+        # delete fiddle
+        self.api.delete_fiddle(id=fiddle.id)
+        print('Deleted fiddle with id %s' % fiddle.id)
 
 
 if __name__ == '__main__':

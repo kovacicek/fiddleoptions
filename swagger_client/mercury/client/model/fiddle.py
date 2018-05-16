@@ -52,8 +52,15 @@ class Fiddle(object):
         'position': 'position'
     }
 
-    def __init__(self, id=None, user_id=None, title=None, description=None, content_json=None, observation_date=None, position=None):  # noqa: E501
-        """Fiddle - a model defined in Swagger"""  # noqa: E501
+    def __init__(self,
+                 id=None,
+                 user_id=None,
+                 title=None,
+                 description=None,
+                 content_json=None,
+                 observation_date=None,
+                 position=None):
+        """Fiddle - a model defined in Swagger"""
 
         self._id = None
         self._user_id = None
